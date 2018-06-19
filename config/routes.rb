@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get '/login' => 'sessions#new'
+  root 'application#hello'
+
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
+
   resources :comments
   resources :tags
   resources :posts
