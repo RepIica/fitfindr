@@ -11,6 +11,9 @@
 
   <%= f.label :password_digest %>
   <%= f.text_field :password_digest %>
+  
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
 
   <%= f.submit "Create User Account" %>
 <% end %>
