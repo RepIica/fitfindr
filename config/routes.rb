@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
+  get '/login' => 'sessions#forbidden'
+
   resources :comments
   resources :tags
   resources :posts
