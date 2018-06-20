@@ -6,11 +6,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.tags.build(tag_type: 'first_type')
+    @post.tags.build(tag_type: 'second_type')
+
+    #byebug
   end
 
   def create
     @post = Post.new(post_params)
-    # byebug
+    #byebug
     if @post.save
       redirect_to posts_path
     else
@@ -32,7 +36,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:image)
+    params.require(:post).permit(:image, :tag_ids, tags_attributes: [:tag_type, :name])
   end
 
   def set_post

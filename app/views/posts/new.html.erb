@@ -5,5 +5,16 @@
     <%= f.file_field :image %>
   </div>
 
+  <%= f.fields_for :tags do |tag| %>
+    <%= tag.collection_select(:tag_ids, Tag.all.select('distinct tag_type'), :id, :tag_type,
+    {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
+                           {:multiple => true}) %>
+   <%= tag.collection_select(:tag_ids, Tag.all.select('distinct name'), :id, :name,
+     {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
+                            {:multiple => true}) %>
+                            <br>
+
+    <% end %>
+
   <%= f.submit "Upload Post" %>
 <% end %>
