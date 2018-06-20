@@ -20,6 +20,9 @@
 # Ignore uploaded files in development
 /storage/*
 
+# By default, files will be placed inside the public/uploads directory, so it is best to exclude it from the version control system:
+public/uploads
+
 /node_modules
 /yarn-error.log
 
