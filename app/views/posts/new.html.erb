@@ -5,16 +5,16 @@
     <%= f.file_field :image %>
   </div>
 
-  <%= f.fields_for :tags do |tag| %>
-    <%= tag.collection_select(:tag_ids, Tag.all.select('distinct tag_type'), :id, :tag_type,
-    {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
-                           {:multiple => true}) %>
-   <%= tag.collection_select(:tag_ids, Tag.all.select('distinct name'), :id, :name,
-     {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
-                            {:multiple => true}) %>
-                            <br>
+  <div class="field">
+    <%= f.label :tag_type_id %><br />
+    <%= f.collection_select :tag_type_id, TagType.order(:name), :id, :name, include_blank: true %>
+  </div>
 
-    <% end %>
+  <div class="field">
+    <%= f.label :tag_id, "State or Province" %><br />
+    <%= f.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: true %>
+  </div>
 
-  <%= f.submit "Upload Post" %>
+  <div class="actions"><%= f.submit %></div>
+
 <% end %>

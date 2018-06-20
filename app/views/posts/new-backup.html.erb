@@ -1,0 +1,26 @@
+<%= form_for @post do |f| %>
+
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div>
+      <h3>Add Tags</h3>
+      <h4>Choose a Type</h4>
+      <%= f.fields_for :contributions do |builder| %>
+      <%= builder.collection_select(:author_id, Author.all, :id, :full_name, prompt: "Select from existing authors") %>
+      <% end %>
+  </div>
+
+  <%= f.collection_select(:tag_ids, Tag.all.select('distinct tag_type'), :id, :tag_type,
+    {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)}
+                           ) %>
+  <%= f.collection_select(:tag_ids, Tag.all.select('distinct name'), :id, :name,
+     {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)}
+                            ) %>
+                            <br>
+
+
+  <%= f.submit "Upload Post" %>
+<% end %>
