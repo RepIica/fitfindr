@@ -2,5 +2,9 @@
 <h1><%= @post.id %></h1>
 
 <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+<br>
+<% @post.tag_names.each do |tag| %>
+<%= tag%>
+<% end %>
 
 <p><%= link_to 'Edit', edit_post_path(@post) %></p>

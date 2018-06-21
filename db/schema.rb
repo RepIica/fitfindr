@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2018_06_21_155740) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "post_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "tag_id"
+    t.integer "post_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "views"
     t.datetime "created_at", null: false
