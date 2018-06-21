@@ -1,4 +1,7 @@
 <h2><%= @user.name %></h2>
 
-<li> Username: <%= @user.name %></li>
+<div><li> Username: <%= @user.username %></li>
 <li> Email: <%= @user.email %></li>
+
+<%= link_to "Create Post", new_post_path(@post) %>
+</div>

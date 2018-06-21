@@ -1,7 +1,15 @@
-<h1>Login</h1>
 
-<%= form_tag ({controller: 'sessions', method: 'post', action: 'create'}) do %>
-  <%= email_field(:user, :email) %>
-  <%= password_field_tag(:password) %>
-   <%= submit_tag "Login" %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Login</h1>
+      <%= form_tag ({controller: 'sessions', method: 'post', action: 'create'}) do %>
+        <%= email_field(:user, :email)%>
+        <%= password_field_tag(:password) %>
+         <%= submit_tag "Login" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
