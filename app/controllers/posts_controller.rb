@@ -6,8 +6,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.tags.build(tag_type: 'first_type')
-    @post.tags.build(tag_type: 'second_type')
 
     #byebug
   end
