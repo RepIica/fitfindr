@@ -6,16 +6,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.tags.build
-    # @post.tags.build(tag_type: 'second_type')
-    # @post.posts_tag.build
-
-    byebug
+    @tagcolors = Tag.all.select {|tag| tag.tag_type == 'Color'}
+    @tagclothing = Tag.all.select {|tag| tag.tag_type != 'Color'}
   end
 
   def create
     @post = Post.new(post_params)
-    byebug
+    # byebug
     if @post.save
       redirect_to posts_path
       # flash[:success] = "Book added"
@@ -40,9 +37,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(
-      :image,
-      tags_attributes: [:name],
-      posts_tag_attributes: [:tag_id, :post_id])
+      :image, tag_ids:[]
+      # ,tags_attributes: [:name],
+      # posts_tag_attributes: [:tag_id, :post_id]
+    )
   end
 
   def set_post

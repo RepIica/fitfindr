@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   has_many :posts_tag
   has_many :tags, through: :posts_tag
 
-  accepts_nested_attributes_for :tags
-  accepts_nested_attributes_for :posts_tag
+  # accepts_nested_attributes_for :tags
+  # accepts_nested_attributes_for :posts_tag
   #belongs_to :user
 
   # def tags_attributes=(tag_attributes) #associates tag only if it doesn't already exist for the post
@@ -16,6 +16,10 @@ class Post < ApplicationRecord
   #     self.tags << tag
   #   end
   # end
+
+  def tag_id
+    self.tags << tag.find(tag_id)
+  end
 
 
 end
