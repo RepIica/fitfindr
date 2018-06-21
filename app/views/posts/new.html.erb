@@ -1,20 +1,24 @@
+<h3>New Post</h3>
 <%= form_for @post do |f| %>
 
   <div>
-    <%= f.label :image %>
+    <%= f.label :image, "Upload Image:"%>
     <%= f.file_field :image %>
   </div>
+  <br>
+  <div>
+      <h3>Add Tags</h3>
+      <h4>Choose a Type</h4>
+      <%= f.fields_for :posts_tags do |builder| %>
 
-  <%= f.fields_for :tags do |tag| %>
-    <%= tag.collection_select(:tag_ids, Tag.all.select('distinct tag_type'), :id, :tag_type,
-    {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
-                           {:multiple => true}) %>
-   <%= tag.collection_select(:tag_ids, Tag.all.select('distinct name'), :id, :name,
-     {include_blank: false, :include_hidden => false, :selected => @post.tags.map(&:id)},
-                            {:multiple => true}) %>
-                            <br>
+        <%= builder.collection_select(:tag_id, Tag.all, :id, :name, prompt: "Select a Tag") %>
 
-    <% end %>
+      <% end %>
+  </div>
+
+
+  <br><br>
+
 
   <%= f.submit "Upload Post" %>
 <% end %>
