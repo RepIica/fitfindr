@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-
   mount_uploader :image, ImageUploader
 
   has_many :comments
@@ -17,9 +16,12 @@ class Post < ApplicationRecord
   #   end
   # end
 
-  def tag_id
-    self.tags << tag.find(tag_id)
+  # def tag_id
+  #   self.tags << tag.find(tag_id)
+  # end
+
+  def tag_names #helper method
+    # gets tag names in an array
+    self.tags.map { |tag| tag.name }
   end
-
-
 end

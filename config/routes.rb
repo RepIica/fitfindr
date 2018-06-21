@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :post_tags
   get '/login' => 'sessions#new'
-  root 'application#hello'
+  root 'application#index'
+  get '/', to: 'application#index', as: 'q'
 
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 tag1 = Tag.create(tag_type: "Color", name:"Red")
 tag2 = Tag.create(tag_type: "Color", name:"Orange")
 tag3 = Tag.create(tag_type: "Color", name:"Yellow")
