@@ -1,0 +1,5 @@
+<h2><%= @tag.name %> Posts</h2>
+
+<% @posts_with_tag.each do |post|%>
+<%= image_tag(post.image.url, alt: 'Image') if post.image? %>
+<% end %>
