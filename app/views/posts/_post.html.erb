@@ -1,4 +1,6 @@
-<h2><%= link_to post.id, post_path(post) %></h2>
-
-<p><%= link_to 'Edit', edit_post_path(post) %></p>
-<hr>
+<%= link_to post_path(post), :action => 'go' do %>
+<div class="img-box">
+  <%= image_tag(post.image.url, alt: 'Image', class: 'post-image img-responsive mx-auto') if post.image? %>
+</div>
+<% end  %>
+<br>

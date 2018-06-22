@@ -1,0 +1,45 @@
+body {
+  padding-top: 54px;
+}
+nav{
+  background-color: white;
+}
+nav a{
+  color: #000;
+}
+.post-image{
+  max-width: 100%;
+}
+.img-box{
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+.center-text{text-align: center}
+.form-width{ width: 100%}
+.search-bar{
+  width:80%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  color:#fff;
+
+}
+.search-bar::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(0,0,0,0.3);
+}
+.search-bar::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(0,0,0,0.3);
+}
+.search-bar:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(0,0,0,0.3);
+}
+.search-bar:-moz-placeholder { /* Firefox 18- */
+  color: rgba(0,0,0,0.3);
+}
+.search-btn{
+  border-radius: 5px;
+  width:18%;
+  /* background-color:  */
+}

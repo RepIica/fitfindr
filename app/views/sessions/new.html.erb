@@ -1,14 +1,14 @@
 <div class="container">
 
   <div class="row">
+    <div class="offset-md-4 col-md-4">
+      <br><br><br><br><br>
 
-    <div class="col-md-4">
-
-      <h1>Login</h1>
+      <h3>Login</h3><br>
       <%= form_tag ({controller: 'sessions', method: 'post', action: 'create'}) do %>
-        <%= email_field(:user, :email)%>
-        <%= password_field_tag(:password) %>
-        <%= submit_tag "Login" %>
+        <%= email_field(:user, :email)%><br><br>
+        <%= password_field_tag(:password) %><br><br>
+        <%= submit_tag "Go" %>
       <% end %>
 
     </div>

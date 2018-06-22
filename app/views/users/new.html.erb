@@ -4,29 +4,30 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-      <h2>New User</h2>
+      <h2 class="center-text">New User</h2>
       <%= form_for @user do |f| %>
-        <%= f.label :name %>
+        <br /><%= f.label :name %>
         <br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: "form-width"%>
       <br>
-        <%= f.label :username %>
+        <br /><%= f.label :username %>
         <br>
-        <%= f.text_field :username %>
+        <%= f.text_field :username, class: "form-width" %>
       <br>
-        <%= f.label :email %>
+        <br /><%= f.label :email %>
         <br>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, class: "form-width" %>
       <br>
-        <%= f.label :Password %>
+        <br /><%= f.label :Password %>
         <br>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: "form-width" %>
       <br>
-        <%= f.label :Password_Confirmation %>
+        <br /><%= f.label :Password_Confirmation %>
         <br>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "form-width" %>
       <br>
-        <%= f.submit "Create User Account" %>
+      <br>
+        <%= f.submit "Sign Up" %>
       <% end %>
     </div>
   </div>

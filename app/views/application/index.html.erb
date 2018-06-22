@@ -1,15 +1,24 @@
-<b>Search Post Tags:</b></br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
 
-<%= form_tag '/', method: :get do %>
-<%= text_field_tag :q, params[:q] %>
-<%= submit_tag 'Search' %>
-<% end %></br></br>
+    </div>
+    <div class="col-md-6">
+      <!-- <b>Search Posts Tags:</b> -->
+      <br><br><br><br>
+      <br><br><br><br>
+      <br><br><br><br>
+      <%= form_tag '/', method: :get do %>
+      <%= text_field_tag :q, params[:q], class: "search-bar", placeholder:"Search Posts Tags:" %>
+      <%= submit_tag 'Search',class: "search-btn" %>
+      <% end %></br></br>
+      <h3 class="center-text">Today's Recent Posts</h3>
+      <br>
+      <%= render @posts %>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.id, post_path(post) %>
-    </li>
-    <br>
-  <% end %>
-</ul>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>

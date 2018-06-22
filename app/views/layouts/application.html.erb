@@ -5,33 +5,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/css/master.css"> -->
+    <%= stylesheet_link_tag "main" %>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
   </head>
 
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">FitFindr</a>
+      <!-- <a class="navbar-brand" href="#">FitFindr</a> -->
+      <%= link_to "FitFindr", '/', class:"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
-            </a>
+            </a> -->
+            <%= link_to "Home", '/', class:"nav-link" %>
           </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="#">Login</a> -->
 
+          <% #if !session[:name] %>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#">Login</a> -->
+                <%= link_to "Login", '/login', class:"nav-link" %>
 
-            <%= link_to "login", '/login', class:"nav-link" %>
-          </li>
+            </li>
+            <%#else  %>
+          <%# end %>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">New User</a>
+            <!-- <a class="nav-link" href="#">New User</a> -->
+            <%= link_to "Sign Up", '/sign-up', class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>

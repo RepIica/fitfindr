@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'application#index'
   get '/', to: 'application#index', as: 'q'
 
+  get '/sign-up' => 'users#new'
+  post '/sign-up' => 'users#create'
+
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
