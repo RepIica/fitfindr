@@ -4,6 +4,13 @@ class PostsController < ApplicationController
     @posts = Post.order('created_at DESC')
   end
 
+  def tags
+    byebug
+    #tag = Tag.find_by(name: params[:tag][:name])
+    @posts = Post.all
+
+  end
+
   def new
     @post = Post.new
     @tagcolors = Tag.all.select {|tag| tag.tag_type == 'Color'}

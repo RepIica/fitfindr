@@ -4,7 +4,8 @@
 <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 <br>
 <% @post.tag_names.each do |tag| %>
-<%= tag%>
+  <% tag_id = Tag.find_by(name: tag) %>
+<%= link_to tag, tag_path(tag_id)%>
 <% end %>
 
 <p><%= link_to 'Edit', edit_post_path(@post) %></p>

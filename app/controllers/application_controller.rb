@@ -18,5 +18,4 @@ class ApplicationController < ActionController::Base
     params.require(:post).permit(:q)
   end
 
-
 end

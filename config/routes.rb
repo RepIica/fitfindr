@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#forbidden'
 
+  get '/posts', to: 'posts#tags', as: 'tag_posts'
+
   resources :comments
   resources :tags
   resources :posts
